@@ -37,7 +37,7 @@ jobs:
           root: workspace
           # Must be relative path from root
           paths:
-            - report1
+            - report
                     
   check-environment:
     # Specify the execution environment. You can specify an image from Docker Hub or use one of our convenience images from CircleCI's Developer Hub.
@@ -49,7 +49,7 @@ jobs:
     steps:
       - attach_workspace:
           # Must be absolute path or relative path from working_directory
-          at: workspace/report
+          at: workspace
       - run:
           name: "Check environment"
           command: |
