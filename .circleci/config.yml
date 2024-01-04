@@ -22,7 +22,7 @@ jobs:
             cp README.md workspace/report/README.md
             cat workspace/report/README.md
             ls -lhR
-            exit 1
+            exit 0
       - run:
           name: "Run if previous fails"
           command: |
