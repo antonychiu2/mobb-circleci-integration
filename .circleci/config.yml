@@ -18,7 +18,6 @@ jobs:
           name: "Say hello"
           command: |
             echo "Hello World"
-            hostnamectl
             pwd
             ls -l
             env
