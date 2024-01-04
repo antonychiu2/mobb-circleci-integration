@@ -54,7 +54,7 @@ jobs:
           name: "Check environment"
           command: |
             pwd
-            ls -la
+            ls -lhR
             env
             cat workspace/report/README.md
 
