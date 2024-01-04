@@ -28,6 +28,7 @@ jobs:
           command: |
             echo "Running"
             env
+          when: on_fail
 
       # Persist the specified paths (workspace/echo-output) into the workspace for use in downstream job.
       - persist_to_workspace:
