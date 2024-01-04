@@ -19,6 +19,7 @@ jobs:
           command: |
             echo "Hello World2"
             ls -la
+            mkdir -p workspace/report
             cp README.md workspace/report/README.md
       # Persist the specified paths (workspace/echo-output) into the workspace for use in downstream job.
       - persist_to_workspace:
