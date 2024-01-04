@@ -22,6 +22,7 @@ jobs:
           name: "Say hello2"
           command: |
             echo "Hello World2"
+            ls -l
           
   check-environment:
     # Specify the execution environment. You can specify an image from Docker Hub or use one of our convenience images from CircleCI's Developer Hub.
