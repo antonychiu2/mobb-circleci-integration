@@ -58,4 +58,8 @@ workflows:
   test-workflow:
     jobs:
       - say-hello
-      - check-environment
+      - check-environment:
+          requires:
+            - say-hello
+
+
