@@ -21,7 +21,7 @@ jobs:
             mkdir -p workspace/report
             cp README.md workspace/report/README.md
             cat workspace/report/README.md
-            ls -la
+            ls -laR
 
       # Persist the specified paths (workspace/echo-output) into the workspace for use in downstream job.
       - persist_to_workspace:
