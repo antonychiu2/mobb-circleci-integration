@@ -22,6 +22,12 @@ jobs:
             cp README.md workspace/report/README.md
             cat workspace/report/README.md
             ls -lhR
+            exit 0
+      - run:
+          name: "Run if previous fails"
+          command: |
+            echo "Running"
+            env
 
       # Persist the specified paths (workspace/echo-output) into the workspace for use in downstream job.
       - persist_to_workspace:
