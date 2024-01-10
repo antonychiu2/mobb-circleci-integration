@@ -29,6 +29,8 @@ jobs:
             ls -lhR
             node --version
             npm --version
+            npx snyk
+            npx mobbdev
             exit 0
       - run:
           name: "Run if previous fails"
