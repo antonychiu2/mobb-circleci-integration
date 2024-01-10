@@ -15,6 +15,9 @@ jobs:
     # See: https://circleci.com/docs/configuration-reference/#steps
     steps:
       - checkout
+      - node/install:
+          install-yarn: true
+          node-version: '18'
       - run:
           name: "Say hello2"
           command: |
