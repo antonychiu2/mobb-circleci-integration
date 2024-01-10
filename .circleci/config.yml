@@ -19,8 +19,9 @@ jobs:
           install-yarn: true
           node-version: '18'
       - run:
-          name: "Say hello2"
+          name: "Prepare Enviornment"
           command: |
+            env
             echo "Hello World2"
             ls -la
             mkdir -p workspace/report
