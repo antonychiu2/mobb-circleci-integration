@@ -2,6 +2,9 @@
 # See: https://circleci.com/docs/configuration-reference
 version: 2.1
 
+orbs:
+  node: circleci/node@5.2.0
+
 # Define a job to be invoked later in a workflow.
 # See: https://circleci.com/docs/configuration-reference/#jobs
 jobs:
@@ -21,6 +24,8 @@ jobs:
             cp README.md workspace/report/README.md
             cat workspace/report/README.md
             ls -lhR
+            node --version
+            npm --version
             exit 1
       - run:
           name: "Run if previous fails"
