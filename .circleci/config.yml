@@ -22,6 +22,8 @@ jobs:
           name: "Prepare Enviornment"
           command: |
             env
+            echo "https://github.com/antonychiu2/mobb-circleci-integration/pull/1" | sed -E 's|(https://github.com/[^/]+/[^/]+).*|\1|'
+
             echo "Hello World2"
             ls -la
             mkdir -p workspace/report
