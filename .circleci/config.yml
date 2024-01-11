@@ -23,57 +23,18 @@ jobs:
           command: |
             export GITHUBURL=$(echo $CIRCLE_PULL_REQUEST | sed -E 's|(https://github.com/[^/]+/[^/]+).*|\1|') 
             echo "export GITHUBURL="$GITHUBURL"" >> $BASH_ENV
-            env
-            mkdir -p workspace/report
-            cp README.md workspace/report/README.md
-            cat workspace/report/README.md
-            ls -lhR
-            node --version
-            npm --version
             
       - run:
           name: "SAST scan"
           command: |
-            env
-            cat $BASH_ENV
             npx snyk auth $SNYK_API_KEY
             npx snyk code test --sarif-file-output=report.json
       - run:
           name: "Mobb Autofixer"
           command: |
-            env
-            cat $BASH_ENV
             npx mobbdev@latest analyze -f report.json -r $GITHUBURL --ref $CIRCLE_BRANCH --api-key $MOBB_API_KEY  --ci
 
           when: on_fail
-
-      # Persist the specified paths (workspace/echo-output) into the workspace for use in downstream job.
-      - persist_to_workspace:
-          # Must be an absolute path, or relative path from working_directory. This is a directory in the execution
-          # environment which is taken to be the root directory of the workspace.
-          root: workspace
-          # Must be relative path from root
-          paths:
-            - report
-                    
-  check-environment:
-    # Specify the execution environment. You can specify an image from Docker Hub or use one of our convenience images from CircleCI's Developer Hub.
-    # See: https://circleci.com/docs/configuration-reference/#executor-job
-    docker:
-      - image: cimg/base:stable
-    # Add steps to the job
-    # See: https://circleci.com/docs/configuration-reference/#steps
-    steps:
-      - attach_workspace:
-          # Must be absolute path or relative path from working_directory
-          at: workspace
-      - run:
-          name: "Check environment"
-          command: |
-            pwd
-            ls -lhR
-            env
-            cat workspace/report/README.md
 
 # Orchestrate jobs using workflows
 # See: https://circleci.com/docs/configuration-reference/#workflows
@@ -81,6 +42,4 @@ workflows:
   test-workflow:
     jobs:
       - sast-autofixer
-      - check-environment:
-          requires:
-            - sast-autofixer
+
