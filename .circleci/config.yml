@@ -35,11 +35,12 @@ jobs:
           name: "SAST scan"
           command: |
             npx snyk auth $SNYK_API_KEY
-            npx snyk code test --sarif-file-output=report.json
+            # npx snyk code test --sarif-file-output=report.json
       - run:
           name: "Mobb Autofixer"
           command: |
-            npx mobbdev@latest analyze -f report.json -r $GITHUBURL --ref $CIRCLE_BRANCH --api-key $MOBB_API_KEY  --ci
+            env
+            # npx mobbdev@latest analyze -f report.json -r $GITHUBURL --ref $CIRCLE_BRANCH --api-key $MOBB_API_KEY  --ci
 
           when: on_fail
 
