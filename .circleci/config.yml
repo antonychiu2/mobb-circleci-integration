@@ -24,6 +24,7 @@ jobs:
       - run:
           name: "Mobb Autofixer"
           command: |
+            # Run Mobb Autofixer against the report.json file generated in the previous step with Snyk SAST scan
             MOBBURL=$(npx mobbdev@latest analyze -f report.json -r $GITHUBURL --ref $CIRCLE_BRANCH --api-key $MOBB_API_KEY --ci)
             echo "Mobb URL: $MOBBURL"
             # Store the Mobb URL in a html file and save it as a CircleCI artifact
