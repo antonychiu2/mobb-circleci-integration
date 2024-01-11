@@ -32,9 +32,15 @@ jobs:
       - run:
           name: "Mobb Autofixer"
           command: |
-            npx mobbdev@latest analyze -f report.json -r $GITHUBURL --ref $CIRCLE_BRANCH --api-key $MOBB_API_KEY  --ci
-
+            MOBBURL = npx mobbdev@latest analyze -f report.json -r $GITHUBURL --ref $CIRCLE_BRANCH --api-key $MOBB_API_KEY --ci
+            export MOBBURL="$MOBBURL"
+            echo "Mobb URL: $MOBBURL"
+            echo "<html><body><a href="$MOBBURL">Click here for the Mobb URL</a></body></html>" > mobburl.html
           when: on_fail
+      - store_artifacts:
+          path: mobburl.html
+          destination: /artifacts
+
 
 # Orchestrate jobs using workflows
 # See: https://circleci.com/docs/configuration-reference/#workflows
