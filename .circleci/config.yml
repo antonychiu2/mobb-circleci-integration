@@ -21,7 +21,8 @@ jobs:
       - run:
           name: "Prepare Enviornment"
           command: |
-            export GITHUBURL=$(echo $CIRCLE_PULL_REQUEST | sed -E 's|(https://github.com/[^/]+/[^/]+).*|\1|')
+            export GITHUBURL=$(echo $CIRCLE_PULL_REQUEST | sed -E 's|(https://github.com/[^/]+/[^/]+).*|\1|') 
+            echo 'export GITHUBURL="$GITHUBURL"' >> $BASH_ENV
             env
             mkdir -p workspace/report
             cp README.md workspace/report/README.md
