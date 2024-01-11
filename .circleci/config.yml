@@ -29,15 +29,17 @@ jobs:
             ls -lhR
             node --version
             npm --version
+            
+      - run:
+          name: "SAST scan"
+          command: |
             npx snyk auth $SNYK_API_KEY
             npx snyk code test --sarif-file-output=report.json
+      - run:
+          name: "Mobb Autofixer"
+          command: |
             npx mobbdev@latest analyze -f report.json -r $GITHUBURL --ref $CIRCLE_BRANCH --api-key $MOBB_API_KEY  --ci
 
-      - run:
-          name: "Run if previous fails"
-          command: |
-            echo "Running"
-            env
           when: on_fail
 
       # Persist the specified paths (workspace/echo-output) into the workspace for use in downstream job.
