@@ -14,7 +14,7 @@ jobs:
           name: "Prepare Enviornment"
           command: |
             # Extract the GitHub repo URL
-            export GITHUBURL=$(echo $CIRCLE_PULL_REQUEST | sed -E 's|(https://github.com/[^/]+/[^/]+).*|\1|') 
+            GITHUBURL=$(echo $CIRCLE_REPOSITORY_URL | sed 's/^git@github.com:/https:\/\/github.com\//;s/\.git$//')
             echo "export GITHUBURL="$GITHUBURL"" >> $BASH_ENV
       - run:
           name: "SAST scan"
