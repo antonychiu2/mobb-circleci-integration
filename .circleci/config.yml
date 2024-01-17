@@ -29,6 +29,16 @@ jobs:
             echo "Mobb URL: $MOBBURL"
             # Store the Mobb URL in a html file and save it as a CircleCI artifact
             echo "<html><body><a href="$MOBBURL">Click here for the Mobb URL</a></body></html>" > mobburl.html
+            ./.circleci/update_github_status.sh \
+              $GITHUB_PAT_SECRET \
+              $CIRCLE_USERNAME \
+              $CIRCLE_PROJECT_REPONAME \
+              $CIRCLE_SHA1 \
+              "success" \
+              $MOBBURL \
+              "Click on \"Details\" to access the Mobb Fix Link" \
+              "Mobb Fix Link"
+
           when: on_fail
       - store_artifacts:
           path: mobburl.html
