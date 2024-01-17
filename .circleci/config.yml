@@ -37,7 +37,7 @@ jobs:
               "$CIRCLE_SHA1" \
               "success" \
               "$MOBBURL" \
-              "Click on \"Details\" to access the Mobb Fix Link" \
+              "Click on \\\"Details\\\" to access the Mobb Fix Link" \
               "Mobb Fix Link"
 
           when: on_fail
