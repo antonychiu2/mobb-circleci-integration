@@ -33,6 +33,9 @@ jobs:
       - store_artifacts:
           path: mobburl.html
           destination: /MobbURL
+      - store_artifacts:
+          path: report.json
+          destination: /Snyk Report
 # Orchestrate jobs using workflows
 workflows:
   test-workflow:
