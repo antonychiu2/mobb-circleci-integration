@@ -11,7 +11,7 @@ jobs:
       - node/install:
           node-version: '18'
       - run:
-          name: "Prepare Enviornment"
+          name: "Prepare Environment for SAST and Mobb Steps"
           command: |
             # Extract the GitHub repo URL
             GITHUBURL=$(echo $CIRCLE_REPOSITORY_URL | sed 's/^git@github.com:/https:\/\/github.com\//;s/\.git$//')
