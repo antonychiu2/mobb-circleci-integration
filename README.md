@@ -128,12 +128,12 @@ If vulnerabilities are found by the SAST scanner, Mobb will also run to consume 
 ![image](https://github.com/antonychiu2/mobb-circleci-integration/assets/5158535/c4478a69-6c22-4c49-8175-0ad373b1d2a7)
 
 Once we arrive at the analysis page for the project, we can see a list of available fixes. Let's click on the "Link to Fix" button next to the XSS finding.
-![image](https://github.com/antonychiu2/jenkins-mobb-integration/assets/5158535/11248919-19ec-456d-bfc0-0caba74a21db)
+![image](https://github.com/antonychiu2/mobb-circleci-integration/assets/5158535/052c17bf-c669-43de-bd74-a98a46d7a651)
 
 Mobb provides a powerful self-guided remediation engine. As a developer, all you have to do is answer a few questions and validate the fix that Mobb is proposing. From there, Mobb will take over the remediation process and commit the code on your behalf.
 
 Once you're ready, select the "Commit Changes" button.
-![image](https://github.com/antonychiu2/jenkins-mobb-integration/assets/5158535/2454da9e-b1cb-4b01-bf55-537389d994e6)
+![image](https://github.com/antonychiu2/mobb-circleci-integration/assets/5158535/9e7203c0-3912-437f-840e-b78a135f8336)
 
 As the last step, enter the name of the target branch where this merge request will be merged. And select "Commit Changes".
 ![image](https://github.com/antonychiu2/jenkins-mobb-integration/assets/5158535/03544f61-681c-4b21-8566-fcd4739afa06)
