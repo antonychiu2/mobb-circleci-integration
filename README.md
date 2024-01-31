@@ -46,13 +46,13 @@ SNYK_API_KEY
 ```
 
 By the time you have loaded the 3 entries, you should have something similar to this:
-![image](https://github.com/antonychiu2/mobb-circleci-integration/assets/5158535/d4925800-71d7-47a0-89ae-676568686984)
+<img src="https://github.com/antonychiu2/mobb-circleci-integration/assets/5158535/d4925800-71d7-47a0-89ae-676568686984" width=80% height=80%>
 
 ## Optional - Build only pull requests
 
 By default, CircleCI will build all the commits in the project. However, you may want to only build branches that have associated pull requests open. If you only want the build to run when there is a pull request, make sure to go to "Project Settings" -> "Advanced" and enable "Only build pull requests". 
 
-![image](https://github.com/antonychiu2/mobb-circleci-integration/assets/5158535/0e6bb3a8-ff22-4896-bb4a-7a5a260a8328)
+<img src="https://github.com/antonychiu2/mobb-circleci-integration/assets/5158535/0e6bb3a8-ff22-4896-bb4a-7a5a260a8328" width=80% height=80%>
 
 
 ## CircleCI 
@@ -131,13 +131,13 @@ If vulnerabilities are found by the SAST scanner, Mobb will also run to consume 
 
 Once we arrive at the analysis page for the project, we can see a list of available fixes. Let's click on the "Link to Fix" button next to the XSS finding.
 
-<img src="https://github.com/antonychiu2/mobb-circleci-integration/assets/5158535/052c17bf-c669-43de-bd74-a98a46d7a651" width=70% height=70%>
+<img src="https://github.com/antonychiu2/mobb-circleci-integration/assets/5158535/052c17bf-c669-43de-bd74-a98a46d7a651" width=90% height=90%>
 
 Mobb provides a powerful self-guided remediation engine. As a developer, all you have to do is answer a few questions and validate the fix that Mobb is proposing. From there, Mobb will take over the remediation process and commit the code on your behalf.
 
 Once you're ready, select the "Commit Changes" button.
 
-<img src="https://github.com/antonychiu2/mobb-circleci-integration/assets/5158535/9e7203c0-3912-437f-840e-b78a135f8336" width=70% height=70%>
+<img src="https://github.com/antonychiu2/mobb-circleci-integration/assets/5158535/9e7203c0-3912-437f-840e-b78a135f8336" width=90% height=90%>
 
 As the last step, enter the name of the target branch where this merge request will be merged. And select "Commit Changes".
 
