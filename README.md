@@ -121,7 +121,7 @@ workflows:
 
 The CircleCI job will run when a pull request is detected in the GitHub Source Code repository that it is connected with. To test this, go to your GitHub and trigger a Pull Request by making some updates to your source code in a new branch. 
 
-![image](https://github.com/antonychiu2/jenkins-mobb-integration/assets/5158535/171bad00-c5c0-4bb1-89c5-fc291e63d3b8)
+<img src="https://github.com/antonychiu2/jenkins-mobb-integration/assets/5158535/171bad00-c5c0-4bb1-89c5-fc291e63d3b8" width=70% height=70%>
 
 Once the Pull Request is initiated, the job in CircleCI will initiate. 
 
