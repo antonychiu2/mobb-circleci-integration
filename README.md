@@ -139,7 +139,7 @@ As the last step, enter the name of the target branch where this merge request w
 ![image](https://github.com/antonychiu2/jenkins-mobb-integration/assets/5158535/03544f61-681c-4b21-8566-fcd4739afa06)
 
 Mobb has successfully committed the remediated code back to your repository under a new branch along with a new Pull Request. Since this pipeline is configured to run on every Pull Request events, a new SAST scan will be conducted to validate the proposed changes to ensure the vulnerabilities have been remediated.
-![image](https://github.com/antonychiu2/mobb-circleci-integration/assets/5158535/a1cac70d-cffc-4e29-a8d3-59bd38ca0820)
+<img src="https://github.com/antonychiu2/mobb-circleci-integration/assets/5158535/a1cac70d-cffc-4e29-a8d3-59bd38ca0820" width=70% height=70%>
 
 
 
