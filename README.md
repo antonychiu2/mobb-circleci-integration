@@ -120,28 +120,26 @@ workflows:
 ## Triggering the pipeline
 
 The CircleCI job will run when a pull request is detected in the GitHub Source Code repository that it is connected with. To test this, go to your GitHub and trigger a Pull Request by making some updates to your source code in a new branch. 
-
 ![image](https://github.com/antonychiu2/jenkins-mobb-integration/assets/5158535/171bad00-c5c0-4bb1-89c5-fc291e63d3b8)
 
 Once the Pull Request is initiated, the job in CircleCI will initiate. 
 
 If vulnerabilities are found by the SAST scanner, Mobb will also run to consume the results of the SAST scan. Once the analysis is ready, a URL to the Mobb dashboard will be provided via the "Details" button. 
-
-![image](https://github.com/antonychiu2/jenkins-mobb-integration/assets/5158535/0959c0bf-14d5-46f4-a7ab-ea8ef8d64361)
+![image](https://github.com/antonychiu2/mobb-circleci-integration/assets/5158535/c4478a69-6c22-4c49-8175-0ad373b1d2a7)
 
 Once we arrive at the analysis page for the project, we can see a list of available fixes. Let's click on the "Link to Fix" button next to the XSS finding.
-
 ![image](https://github.com/antonychiu2/jenkins-mobb-integration/assets/5158535/11248919-19ec-456d-bfc0-0caba74a21db)
 
 Mobb provides a powerful self-guided remediation engine. As a developer, all you have to do is answer a few questions and validate the fix that Mobb is proposing. From there, Mobb will take over the remediation process and commit the code on your behalf.
 
 Once you're ready, select the "Commit Changes" button.
-
 ![image](https://github.com/antonychiu2/jenkins-mobb-integration/assets/5158535/2454da9e-b1cb-4b01-bf55-537389d994e6)
 
 As the last step, enter the name of the target branch where this merge request will be merged. And select "Commit Changes".
 ![image](https://github.com/antonychiu2/jenkins-mobb-integration/assets/5158535/03544f61-681c-4b21-8566-fcd4739afa06)
 
 Mobb has successfully committed the remediated code back to your repository under a new branch along with a new Pull Request. Since this pipeline is configured to run on every Pull Request events, a new SAST scan will be conducted to validate the proposed changes to ensure the vulnerabilities have been remediated.
+![image](https://github.com/antonychiu2/mobb-circleci-integration/assets/5158535/0b1da58e-f9ba-4c17-897d-ed665588ded0)
+
 
 
